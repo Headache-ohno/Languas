@@ -1,9 +1,9 @@
 # Languas
 
-Languas is a small, statically composed runtime written in C.
-The same core and application modules can be compiled as either:
+Languas is a small, statically composed operating system written in C. The
+same core and application modules can be compiled as either:
 
-- a Bootex-compatible ARMv6-M / Cortex-M0 ROM; or
+- a Bootex-compatible ARMv6-M (Cortex-M0 / Cortex-M0+) ROM; or
 - a native program for Windows, Linux, or macOS.
 
 Modules are selected at build time. There is no runtime module loader and no
@@ -15,7 +15,7 @@ Requirements:
 
 - GNU Make
 - Clang or a compatible C compiler
-- `ld.lld` and `llvm-objcopy` when building Cortex-M0 ROMs
+- `ld.lld` and `llvm-objcopy` when building ARMv6-M ROMs
 
 Common commands:
 
@@ -23,7 +23,7 @@ Common commands:
 make host       # Native programs for the current operating system
 make x86        # 32-bit x86 native programs
 make x64        # 64-bit x86 native programs
-make arm        # Cortex-M0 ROMs
+make arm        # ARMv6-M (Cortex-M0 / Cortex-M0+) ROMs
 make all        # All targets supported by the local toolchain
 make sanitize   # Host build with ASan and UBSan
 make test       # ARM build plus ROM boundary tests
@@ -73,12 +73,12 @@ Description: Interactive shell application
 
 | Target | Output | Platform layer |
 | --- | --- | --- |
-| ARMv6-M / Cortex-M0 | Bootex `.rom` | Memory-mapped GPIO/UART |
+| ARMv6-M / Cortex-M0 / Cortex-M0+ | Bootex `.rom` | Memory-mapped GPIO/UART |
 | Windows x86/x64 | Native `.exe` | Win32 console |
 | Linux | Native executable | POSIX terminal |
 | macOS | Native executable | POSIX terminal |
 
-The Cortex-M0 implementation remains part of the same source tree as the host
+The ARMv6-M implementation remains part of the same source tree as the host
 implementation. Platform-specific behavior is isolated under `targets/`.
 
 ## Applications
@@ -106,7 +106,7 @@ invariants and assurance limits.
 
 - Windows x86 and x64 builds have been compiled and started successfully.
 - Host builds pass Clang Static Analyzer and ASan/UBSan startup checks.
-- Commander and Vanilla Cortex-M0 ROMs compile, link, and pass ROM validation.
+- Commander and Vanilla ARMv6-M ROMs compile, link, and pass ROM validation.
 - ROM boundary regression tests pass.
-- Actual Cortex-M0 hardware execution and Linux/macOS runtime execution still
-  require testing on those platforms.
+- Operation has been verified on RP2040 (Cortex-M0+) hardware.
+- Linux and macOS runtime execution still requires testing on those platforms.
