@@ -88,8 +88,7 @@ void lg_app_run(void) {
     screen_init();
     key_init();
     screen_clear();
-    screen_print("Languas Commander\r\n");
-    screen_print("Ultra Pure.\r\n\r\n");
+    screen_print("Languas Commander\r\n\r\n");
     screen_print("> ");
 
     for (;;) {

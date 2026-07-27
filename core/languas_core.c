@@ -25,9 +25,6 @@ static void lg_runtime_init(void) {
 
 void lg_init(void) {
     lg_ticks = 0u;
-
-    /* Boot marker: Languas started */
-    lg_write(LG_PORT_UART_TX, 'L');
 }
 
 void lg_tick(void) {

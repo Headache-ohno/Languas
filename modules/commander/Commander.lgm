@@ -3,4 +3,4 @@ Name: Commander
 Sources: commander.c
 Depends: Screen, Key
 Profile: 0x03
-Description: Languas+ TUI interactive shell providing system commands and text interface
+Description: Interactive command shell with system commands and a text interface
