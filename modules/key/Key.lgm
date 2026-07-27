@@ -1,0 +1,4 @@
+LGM1
+Name: Key
+Sources: key.c
+Description: Keyboard input driver reading from UART RX register with auto-acknowledge clear

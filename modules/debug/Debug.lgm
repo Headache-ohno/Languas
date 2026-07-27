@@ -1,0 +1,5 @@
+LGM1
+Name: Debug
+Sources: debug.c
+Depends: Screen
+Description: Debug diagnostic utility printing helper functions over Screen/UART.

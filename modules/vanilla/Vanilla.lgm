@@ -1,0 +1,5 @@
+LGM1
+Name: Vanilla
+Sources: languas_vanilla.c
+Profile: 0x02
+Description: Reference minimal implementation module for Languas
