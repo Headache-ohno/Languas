@@ -1,5 +1,6 @@
 # Languas
 
+![Languas](Languas/logo.png)
 Languas is a small, statically composed operating system written in C. The
 same core and application modules can be compiled as either:
 
